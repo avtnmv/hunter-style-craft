@@ -20,10 +20,10 @@ const Header = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-heading text-xl font-bold">HG</span>
+              <span className="text-primary-foreground font-heading text-xl font-bold">GD</span>
             </div>
             <span className="text-foreground font-heading text-2xl tracking-wider">
-              HUNTER'S <span className="text-primary">GARAGE</span>
+              GORILLA <span className="text-primary">DRIVE</span>
             </span>
           </a>
 

@@ -40,9 +40,9 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-none mb-6"
           >
-            HUNTER'S
+            GORILLA
             <br />
-            <span className="text-primary text-glow">GARAGE</span>
+            <span className="text-primary text-glow">DRIVE</span>
           </motion.h1>
 
           <motion.p

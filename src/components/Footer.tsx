@@ -9,11 +9,11 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
               <span className="text-primary-foreground font-heading text-xl font-bold">
-                HG
+                GD
               </span>
             </div>
             <span className="text-foreground font-heading text-xl tracking-wider">
-              HUNTER'S <span className="text-primary">GARAGE</span>
+              GORILLA <span className="text-primary">DRIVE</span>
             </span>
           </div>
 
@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-muted-foreground text-sm">
-            © 2024 Hunter's Garage. Всі права захищені.
+            © 2024 Gorilla Drive. Всі права захищені.
           </p>
         </div>
       </div>
