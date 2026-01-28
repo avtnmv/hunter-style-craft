@@ -48,13 +48,9 @@ const Contacts = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="grid sm:grid-cols-2 gap-6">
-            {contactInfo.map((info, index) => (
-              <motion.div
+            {contactInfo.map((info) => (
+              <div
                 key={info.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-border p-6 group hover:border-primary transition-colors duration-300"
               >
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
@@ -73,7 +69,7 @@ const Contacts = () => {
                 ) : (
                   <p className="text-muted-foreground">{info.value}</p>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
 

@@ -109,13 +109,9 @@ const Parts = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {features.map((feature, index) => (
-            <motion.div
+          {features.map((feature) => (
+            <div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-secondary p-6 border border-border hover:border-primary transition-all duration-300 text-center"
             >
               <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-primary transition-colors duration-300">
@@ -125,7 +121,7 @@ const Parts = () => {
                 {feature.title}
               </h3>
               <p className="text-muted-foreground text-sm">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

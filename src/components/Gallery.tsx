@@ -29,13 +29,9 @@ const Gallery = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, index) => (
-            <motion.div
+          {galleryItems.map((item) => (
+            <div
               key={item.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative aspect-[4/3] bg-secondary border border-border overflow-hidden cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -50,7 +46,7 @@ const Gallery = () => {
                 </span>
               </div>
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary transition-colors duration-300" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

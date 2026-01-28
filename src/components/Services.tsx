@@ -54,13 +54,9 @@ const Services = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <motion.div
+          {services.map((service) => (
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-secondary p-8 border border-border hover:border-primary transition-all duration-300"
             >
               <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
@@ -70,7 +66,7 @@ const Services = () => {
                 {service.title}
               </h3>
               <p className="text-muted-foreground">{service.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

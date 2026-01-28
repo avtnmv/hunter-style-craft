@@ -35,18 +35,14 @@ const About = () => {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((feature, index) => (
-                <motion.div
+              {features.map((feature) => (
+                <div
                   key={feature}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-3"
                 >
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="text-foreground font-medium">{feature}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
