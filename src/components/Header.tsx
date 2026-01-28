@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { label: "Головна", href: "#home" },
@@ -19,13 +20,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-heading text-xl font-bold">GD</span>
-            </div>
-            <span className="text-foreground font-heading text-2xl tracking-wider">
-              GORILLA <span className="text-primary">DRIVE</span>
-            </span>
+          <a href="#home" className="flex items-center">
+            <img src={logo} alt="Gorilla Drive" className="h-16 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
