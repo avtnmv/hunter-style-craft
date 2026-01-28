@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Send } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -6,16 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-heading text-xl font-bold">
-                GD
-              </span>
-            </div>
-            <span className="text-foreground font-heading text-xl tracking-wider">
-              GORILLA <span className="text-primary">DRIVE</span>
-            </span>
-          </div>
+          <a href="#home" className="flex items-center">
+            <img src={logo} alt="Gorilla Drive" className="h-14 w-auto" />
+          </a>
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
