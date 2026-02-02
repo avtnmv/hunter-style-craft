@@ -7,6 +7,7 @@ import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
 import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <FAQ />
       <Contacts />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
