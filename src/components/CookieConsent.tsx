@@ -82,7 +82,7 @@ const CookieConsent = () => {
                   <Button
                     onClick={acceptNecessary}
                     variant="outline"
-                    className="border-border text-foreground hover:border-primary hover:text-primary rounded-none"
+                    className="border-border text-foreground hover:border-primary hover:text-primary hover:bg-transparent rounded-none"
                   >
                     Лише необхідні
                   </Button>
