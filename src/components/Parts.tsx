@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Package, Search, Truck, ShieldCheck } from "lucide-react";
+import InputMask from "react-input-mask";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +10,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
@@ -41,7 +41,6 @@ const Parts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
     phone: "",
     partDescription: "",
     vinCode: "",
@@ -72,7 +71,6 @@ const Parts = () => {
     setIsOpen(false);
     setFormData({
       firstName: "",
-      lastName: "",
       phone: "",
       partDescription: "",
       vinCode: "",
@@ -154,62 +152,54 @@ const Parts = () => {
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="firstName" className="text-foreground">
-                  Ім'я <span className="text-primary">*</span>
-                </Label>
-                <Input
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="Введіть ім'я"
-                  className="bg-secondary border-border text-foreground placeholder:text-muted-foreground focus:border-primary rounded-none"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="lastName" className="text-foreground">
-                  Прізвище
-                </Label>
-                <Input
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Введіть прізвище"
-                  className="bg-secondary border-border text-foreground placeholder:text-muted-foreground focus:border-primary rounded-none"
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="firstName" className="text-foreground">
+                Ім'я <span className="text-primary">*</span>
+              </Label>
+              <input
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="Введіть ім'я"
+                className="flex h-10 w-full bg-secondary border border-border px-3 py-2 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
+              />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-foreground">
                 Телефон <span className="text-primary">*</span>
               </Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
+              <InputMask
+                mask="+38 (099) 999-99-99"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+380 XX XXX XX XX"
-                className="bg-secondary border-border text-foreground placeholder:text-muted-foreground focus:border-primary rounded-none"
-              />
+              >
+                {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
+                  <input
+                    {...inputProps}
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+38 (0XX) XXX-XX-XX"
+                    className="flex h-10 w-full bg-secondary border border-border px-3 py-2 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
+                  />
+                )}
+              </InputMask>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="vinCode" className="text-foreground">
                 VIN-код автомобіля
               </Label>
-              <Input
+              <input
                 id="vinCode"
                 name="vinCode"
                 value={formData.vinCode}
                 onChange={handleChange}
                 placeholder="Наприклад: WVWZZZ3CZWE123456"
                 maxLength={17}
-                className="bg-secondary border-border text-foreground placeholder:text-muted-foreground focus:border-primary rounded-none uppercase"
+                className="flex h-10 w-full bg-secondary border border-border px-3 py-2 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors uppercase"
               />
             </div>
 
@@ -224,7 +214,7 @@ const Parts = () => {
                 onChange={handleChange}
                 placeholder="Опишіть яку запчастину шукаєте, марку та модель авто..."
                 rows={4}
-                className="bg-secondary border-border text-foreground placeholder:text-muted-foreground focus:border-primary rounded-none resize-none"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none rounded-none resize-none"
               />
             </div>
 
