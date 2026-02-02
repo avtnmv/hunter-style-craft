@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -33,10 +34,18 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Copyright */}
-          <p className="text-muted-foreground text-sm">
-            © 2024 Gorilla Drive. Всі права захищені.
-          </p>
+          {/* Links and Copyright */}
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <Link
+              to="/privacy-policy"
+              className="text-muted-foreground text-sm hover:text-primary transition-colors"
+            >
+              Політика конфіденційності
+            </Link>
+            <p className="text-muted-foreground text-sm">
+              © 2024 Gorilla Drive. Всі права захищені.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
